@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BlobOptions } from "buffer";
 
 const HeaderFN = () => {
   const [list, setList] = useState<boolean>(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   return (
     <header>
@@ -31,7 +31,7 @@ const HeaderFN = () => {
 
         <div className="flex flex-row flex-nowrap items-center gap-x-3">
           {/* menu list */}
-          <button className="lg:hidden">
+          <button onClick={() => setOpenMenu(true)} className="lg:hidden">
             <i className="bi bi-list text-[24px]"></i>
           </button>
 
@@ -67,82 +67,84 @@ const HeaderFN = () => {
       </div>
 
       {/* menu list */}
-      <div className="fixed top-0 w-full h-screen pr-2 z-50 bg-slate-950/70">
-        <div className="w-fit h-full flex flex-row flex-nowrap items-start bg-white">
-          <ul className="w-[250px] py-6 pl-4 flex flex-col flex-nowrap gap-4 font-medium">
-            <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
-              <Link href={"#"}>
-                <span>Trang chủ</span>
-              </Link>
-            </li>
-
-            <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
-              <Link href={"#"}>
-                <span>Giới thiệu</span>
-              </Link>
-            </li>
-
-            <li className=" group/el_list_menu pb-1.5 hover:border-b border-[#FF7800]">
-              <div className="flex flex-nowrap justify-between items-center">
-                <Link
-                  href={"https://www.w3schools.com/"}
-                  className="group-hover/el_list_menu:text-[#FF7800]"
-                >
-                  Sản phẩm
+      {openMenu && (
+        <div className="fixed top-0 w-full h-screen pr-2 z-50 bg-slate-950/70">
+          <div className="w-fit h-full flex flex-row flex-nowrap items-start bg-white">
+            <ul className="w-[250px] py-6 pl-4 flex flex-col flex-nowrap gap-4 font-medium">
+              <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
+                <Link href={"#"}>
+                  <span>Trang chủ</span>
                 </Link>
-                <button
-                  onClick={() => setList(!list)}
-                  className="group-hover/el_list_menu:text-[#FF7800]"
-                >
-                  <i className="bi bi-caret-down-fill"></i>
-                </button>
-              </div>
-              {/* Danh sách sản phẩm */}
-              {list ? (
-                <ul className="mt-3 pl-4 flex flex-col flex-nowrap gap-2">
-                  <li className="pb-1.5 hover:text-[#FF7800]">
-                    <Link href={"#"}>
-                      <span>Rau các loại</span>
-                    </Link>
-                  </li>
-                  <li className="pb-1.5 hover:text-[#FF7800]">
-                    <Link href={"#"}>
-                      <span>Thực phẩm</span>
-                    </Link>
-                  </li>
-                  <li className="pb-1.5 hover:text-[#FF7800]">
-                    <Link href={"#"}>
-                      <span>Trái cây</span>
-                    </Link>
-                  </li>
-                </ul>
-              ) : null}
-            </li>
+              </li>
 
-            <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
-              <Link href={"#"}>
-                <span>Đặt hàng</span>
-              </Link>
-            </li>
+              <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
+                <Link href={"#"}>
+                  <span>Giới thiệu</span>
+                </Link>
+              </li>
 
-            <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
-              <Link href={"#"}>
-                <span>Tin tức</span>
-              </Link>
-            </li>
+              <li className=" group/el_list_menu pb-1.5 hover:border-b border-[#FF7800]">
+                <div className="flex flex-nowrap justify-between items-center">
+                  <Link
+                    href={"https://www.w3schools.com/"}
+                    className="group-hover/el_list_menu:text-[#FF7800]"
+                  >
+                    Sản phẩm
+                  </Link>
+                  <button
+                    onClick={() => setList(!list)}
+                    className="group-hover/el_list_menu:text-[#FF7800]"
+                  >
+                    <i className="bi bi-caret-down-fill"></i>
+                  </button>
+                </div>
+                {/* Danh sách sản phẩm */}
+                {list ? (
+                  <ul className="mt-3 pl-4 flex flex-col flex-nowrap gap-2">
+                    <li className="pb-1.5 hover:text-[#FF7800]">
+                      <Link href={"#"}>
+                        <span>Rau các loại</span>
+                      </Link>
+                    </li>
+                    <li className="pb-1.5 hover:text-[#FF7800]">
+                      <Link href={"#"}>
+                        <span>Thực phẩm</span>
+                      </Link>
+                    </li>
+                    <li className="pb-1.5 hover:text-[#FF7800]">
+                      <Link href={"#"}>
+                        <span>Trái cây</span>
+                      </Link>
+                    </li>
+                  </ul>
+                ) : null}
+              </li>
 
-            <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
-              <Link href={"#"}>
-                <span>Liên hệ</span>
-              </Link>
-            </li>
-          </ul>
+              <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
+                <Link href={"#"}>
+                  <span>Đặt hàng</span>
+                </Link>
+              </li>
 
-          <button>
-            <i className="bi bi-x text-4xl"></i>
-          </button>
+              <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
+                <Link href={"#"}>
+                  <span>Tin tức</span>
+                </Link>
+              </li>
+
+              <li className="pb-1.5 hover:border-b border-[#FF7800] hover:text-[#FF7800]">
+                <Link href={"#"}>
+                  <span>Liên hệ</span>
+                </Link>
+              </li>
+            </ul>
+
+            <button onClick={() => setOpenMenu(false)}>
+              <i className="bi bi-x text-4xl"></i>
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };

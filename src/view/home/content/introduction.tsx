@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const IntroductionFN = () => {
   return (
-    <div className="mb-8 flex flex-col flex-nowrap gap-7 lg:mb-28 lg:flex-row lg:justify-center">
+    <div className="mb-8 flex flex-col flex-nowrap justify-center items-center gap-7 lg:mb-28 lg:flex-row ">
       <Image
         src={"/images/banner_intro.jpg"}
         alt=""
         width={476}
         height={582}
-        className="w-full lg:w-auto px-3 object-cover lg:px-0"
+        className="w-full min-[414px]:w-[476px] px-3 object-contain lg:px-0"
       />
       <div className="relative lg:w-[520px] text-[#656565] order-first lg:order-none">
         <p className="mb-2 text-lg text-center text-black lg:mb-10 lg:text-4xl">

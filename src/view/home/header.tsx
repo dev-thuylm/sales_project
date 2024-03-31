@@ -5,6 +5,7 @@ import Link from "next/link";
 const HeaderFN = () => {
   const [list, setList] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [openSearch, setOpenSearch] = useState<boolean>(false);
 
   return (
     <header>
@@ -15,21 +16,21 @@ const HeaderFN = () => {
         alt="banner header top"
       /> */}
       {/* ================================== */}
-      <div className="py-4 px-4 flex flex-nowrap justify-between min-[450px]:px-8 sm:px-16 lg:py-5 lg:px-0 lg:justify-center lg:items-center lg:gap-x-20">
+      <div className="py-[3px] px-2.5 flex flex-nowrap justify-between min-[375px]:px-4 min-[450px]:px-8 sm:px-6 sm:py-1.5 lg:py-5 lg:px-0 lg:justify-center lg:items-center lg:gap-x-20">
         {/* Tìm kiếm */}
-        <div className="lg:flex w-fit h-full p-0.5 pl-4 hidden flex-row flex-nowrap gap-x-4 border border-[#6e7673] rounded-[30px] cursor-pointer">
+        <div className="sm:flex w-fit h-full p-0.5 pl-4 hidden flex-row flex-nowrap gap-x-4 border border-[#6e7673] rounded-[30px] cursor-pointer">
           <input
             type="text"
             placeholder="Tìm sản phẩm"
             style={{ outline: "none" }}
             className="text-base"
           />
-          <div className="group/search hover:bg-white w-12 h-12 flex justify-center items-center bg-[#339538] rounded-full">
-            <i className="bi bi-search text-[20px] text-white group-hover/search:text-[#339538]"></i>
+          <div className="sm:w-9 sm:h-9 group/search hover:bg-white w-12 h-12 flex justify-center items-center bg-[#339538] rounded-full">
+            <i className="bi bi-search sm:text-[18px] text-[20px] text-white group-hover/search:text-[#339538]"></i>
           </div>
         </div>
 
-        <div className="flex flex-row flex-nowrap items-center gap-x-3">
+        <div className="sm:order-first min-[375px]:gap-x-3 flex flex-row flex-nowrap items-center gap-x-1">
           {/* menu list */}
           <button onClick={() => setOpenMenu(true)} className="lg:hidden">
             <i className="bi bi-list text-[24px]"></i>
@@ -45,9 +46,14 @@ const HeaderFN = () => {
           />
         </div>
 
-        <div className="flex flex-row flex-nowrap justify-center items-center gap-3">
+        <div className="lg:gap-3 min-[375px]:gap-4 flex flex-row flex-nowrap justify-center items-center gap-2">
+          {/* Button tìm kiếm mobile*/}
+          <button onClick={() => setOpenSearch(true)} className="sm:hidden">
+            <i className="bi bi-search text-[20px]"></i>
+          </button>
+
           {/* Hỗ trợ */}
-          <div className="lg:flex py-1 px-4 hidden flex-row flex-nowrap justify-center items-center gap-3 border border-[#6e7673] text-[#349545] rounded-[30px]">
+          <div className="py-1 px-4 hidden flex-row flex-nowrap justify-center items-center gap-3 border border-[#6e7673] text-[#349545] rounded-[30px] lg:flex">
             <i className="bi bi-telephone text-[30px] font-bold"></i>
             <div>
               <p>Hỗ trợ</p>
@@ -56,6 +62,7 @@ const HeaderFN = () => {
               </p>
             </div>
           </div>
+
           {/* Giỏ hàng */}
           <div className="w-9 h-9 lg:w-14 lg:h-14 relative flex items-center justify-center bg-[#339538] rounded-full cursor-pointer">
             <i className="bi bi-cart3 text-[20px] lg:text-[28px] text-white"></i>
@@ -66,7 +73,7 @@ const HeaderFN = () => {
         </div>
       </div>
 
-      {/* menu list */}
+      {/* menu list mobile */}
       {openMenu && (
         <div className="fixed top-0 w-full h-screen pr-2 z-50 bg-slate-950/70">
           <div className="w-fit h-full flex flex-row flex-nowrap items-start bg-white">
@@ -83,7 +90,10 @@ const HeaderFN = () => {
                 </Link>
               </li>
 
-              <li className=" group/el_list_menu pb-1.5 hover:border-b border-[#FF7800]">
+              <li
+                onClick={() => setList(!list)}
+                className=" group/el_list_menu pb-1.5 hover:border-b border-[#FF7800]"
+              >
                 <div className="flex flex-nowrap justify-between items-center">
                   <Link
                     href={"https://www.w3schools.com/"}
@@ -142,6 +152,27 @@ const HeaderFN = () => {
             <button onClick={() => setOpenMenu(false)}>
               <i className="bi bi-x text-4xl"></i>
             </button>
+          </div>
+        </div>
+      )}
+      {/* Tìm kiếm mobile */}
+      {openSearch && (
+        <div className=" fixed top-0 py-2 px-1.5 w-full bg-white z-50 shadow-xl ">
+          <div className="flex flex-row flex-nowrap gap-1">
+            <button onClick={() => setOpenSearch(false)}>
+              <i className="bi bi-arrow-left text-[20px] min-[414px]:text-[24px]"></i>
+            </button>
+            <div className="w-[90%] py-1 px-3 flex flex-row flex-nowrap justify-between gap-1 border border-slate-600 rounded-3xl">
+              <input
+                type="text"
+                placeholder="Tìm sản phẩm"
+                style={{ outline: "none" }}
+                className="w-[90%] text-base"
+              />
+              <div>
+                <i className="bi bi-search text-[20px]"></i>
+              </div>
+            </div>
           </div>
         </div>
       )}

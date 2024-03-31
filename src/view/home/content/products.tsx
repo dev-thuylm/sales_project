@@ -14,7 +14,7 @@ const ProductsFN = (props: Props) => {
       <p className="mb-1 text-xl font-medium uppercase text-center lg:mb-3 lg:text-4xl">
         {title}
       </p>
-      <p className="text-sm text-center lg:text-base">{info}</p>
+      <p className="px-3 text-sm text-center lg:text-base">{info}</p>
       {/* Bộ lọc */}
       {/* <div className="flex flex-row flex-nowrap justify-center items-center gap-4">
         <button className="px-4 py-2.5 border-2 border-[#339538] rounded-3xl text-white bg-[#339538]">
@@ -28,8 +28,8 @@ const ProductsFN = (props: Props) => {
         </button>
       </div> */}
       {/* Danh sách sản phẩm */}
-      <div className="px-1 mt-5 mb-4 lg:mt-11 lg:mb-8 lg:px-56">
-        <div className=" grid grid-cols-2 justify-items-center gap-x-1.5 gap-y-2 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10">
+      <div className="px-1 mt-5 mb-4 flex justify-center sm:px-0 md:px-2 lg:mt-11 lg:mb-8 lg:px-56">
+        <div className="w-full grid grid-cols-2 justify-items-center gap-x-1 gap-y-2 min-[510px]:w-[500px] min-[510px]:gap-3 sm:w-[520px] sm:gap-x-4 sm:gap-y-3 md:w-full md:grid-cols-4 md:gap-2 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10">
           <ProductV1 />
           <ProductV1 />
           <ProductV1 />
@@ -44,7 +44,7 @@ const ProductsFN = (props: Props) => {
       <div className="flex justify-center items-center">
         <Link
           href={"#"}
-          className="px-1.5 border-2 border-[#339538] rounded-3xl lg:px-2.5 lg:py-1"
+          className="px-1.5 border-2 border-[#339538] rounded-3xl min-[510px]:py-0.5 lg:px-2.5 lg:py-1"
         >
           <span className=" text-[13px] text-center font-medium lg:text-sm">Xem thêm</span>
         </Link>

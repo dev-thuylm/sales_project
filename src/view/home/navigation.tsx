@@ -74,11 +74,11 @@ const NavigationFN = () => {
           className="w-full h-[280px] object-cover object-center lg:h-auto"
         />
         {/* Danh mục sản phẩm */}
-        <div className="py-6 static bottom-0 w-full z-10 lg:absolute lg:h-32 lg:py-0">
+        <div className="py-3 static bottom-0 w-full z-10 lg:absolute lg:h-32 lg:py-0">
           <div className=" static top-1/2 w-full flex flex-row flex-wrap justify-center items-center gap-x-5 gap-y-3 lg:flex-nowrap lg:gap-x-20 lg:absolute">
             {/* select 1 */}
             <div className="group/menu_nav">
-              <div className=" relative w-16 h-16 lg:w-32 lg:h-32">
+              <div className="lg:w-32 lg:h-32 sm:w-20 sm:h-20 relative w-16 h-16 ">
                 <div className="w-full h-full p-0.5 flex justify-center items-center bg-white rounded-full border-2 border-slate-400/35">
                   <Image
                     src={"/images/nav_cate-1.jpg"}
@@ -88,7 +88,7 @@ const NavigationFN = () => {
                   />
                 </div>
 
-                <div className="group-hover/menu_nav:opacity-100 hidden absolute top-0 w-16 h-16 lg:w-32 lg:h-32 lg:flex flex-col flex-nowrap justify-center items-center opacity-0 border-2 border-slate-200 bg-slate-600/60 text-white rounded-full">
+                <div className="lg:flex group-hover/menu_nav:opacity-100 hidden absolute top-0 w-32 h-32 flex-col flex-nowrap justify-center items-center opacity-0 border-2 border-slate-200 bg-slate-600/60 text-white rounded-full">
                   <p>6</p>
                   <p>Sản phẩm</p>
                 </div>
@@ -97,7 +97,7 @@ const NavigationFN = () => {
             </div>
             {/* select 2 */}
             <div className="group/menu_nav">
-              <div className=" relative w-16 h-16 lg:w-32 lg:h-32">
+              <div className="lg:w-32 lg:h-32 sm:w-20 sm:h-20 relative w-16 h-16">
                 <div className="w-full h-full p-0.5 flex justify-center items-center bg-white rounded-full border-2 border-slate-400/35">
                   <Image
                     src={"/images/nav_cate-1.jpg"}
@@ -107,7 +107,7 @@ const NavigationFN = () => {
                   />
                 </div>
 
-                <div className="group-hover/menu_nav:opacity-100 hidden absolute top-0 w-16 h-16 lg:w-32 lg:h-32 lg:flex flex-col flex-nowrap justify-center items-center opacity-0 border-2 border-slate-200 bg-slate-600/60 text-white rounded-full">
+                <div className="lg:flex group-hover/menu_nav:opacity-100 hidden absolute top-0 w-32 h-32 flex-col flex-nowrap justify-center items-center opacity-0 border-2 border-slate-200 bg-slate-600/60 text-white rounded-full">
                   <p>6</p>
                   <p>Sản phẩm</p>
                 </div>
@@ -116,7 +116,7 @@ const NavigationFN = () => {
             </div>
             {/* select 3 */}
             <div className="group/menu_nav">
-              <div className=" relative w-16 h-16 lg:w-32 lg:h-32">
+              <div className="lg:w-32 lg:h-32 sm:w-20 sm:h-20 relative w-16 h-16">
                 <div className="w-full h-full p-0.5 flex justify-center items-center bg-white rounded-full border-2 border-slate-400/35">
                   <Image
                     src={"/images/nav_cate-1.jpg"}
@@ -126,7 +126,7 @@ const NavigationFN = () => {
                   />
                 </div>
 
-                <div className="group-hover/menu_nav:opacity-100 hidden absolute top-0 w-16 h-16 lg:w-32 lg:h-32 lg:flex flex-col flex-nowrap justify-center items-center opacity-0 border-2 border-slate-200 bg-slate-600/60 text-white rounded-full">
+                <div className="lg:flex group-hover/menu_nav:opacity-100 hidden absolute top-0 w-32 h-32  flex-col flex-nowrap justify-center items-center opacity-0 border-2 border-slate-200 bg-slate-600/60 text-white rounded-full">
                   <p>6</p>
                   <p>Sản phẩm</p>
                 </div>
@@ -135,7 +135,7 @@ const NavigationFN = () => {
             </div>
             {/* select 4 */}
             <div className="group/menu_nav">
-              <div className=" relative w-16 h-16 lg:w-32 lg:h-32">
+              <div className="lg:w-32 lg:h-32 sm:w-20 sm:h-20 relative w-16 h-16">
                 <div className="w-full h-full p-0.5 flex justify-center items-center bg-white rounded-full border-2 border-slate-400/35">
                   <Image
                     src={"/images/nav_cate-1.jpg"}
@@ -145,7 +145,7 @@ const NavigationFN = () => {
                   />
                 </div>
 
-                <div className="group-hover/menu_nav:opacity-100 hidden absolute top-0 w-16 h-16 lg:w-32 lg:h-32 lg:flex flex-col flex-nowrap justify-center items-center opacity-0 border-2 border-slate-200 bg-slate-600/60 text-white rounded-full">
+                <div className="lg:flex group-hover/menu_nav:opacity-100 hidden absolute top-0 w-32 h-32  flex-col flex-nowrap justify-center items-center opacity-0 border-2 border-slate-200 bg-slate-600/60 text-white rounded-full">
                   <p>6</p>
                   <p>Sản phẩm</p>
                 </div>
